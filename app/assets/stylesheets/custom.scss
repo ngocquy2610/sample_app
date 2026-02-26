@@ -185,6 +185,95 @@ color: $state-danger-text;
 
 
 /* Dropdown menu */
-.dropdown-menu.active {
-display: block;
+.dropdown-menu.open {
+  display: block;
+}
+
+/* Hamburger menu styles */
+.navbar-toggle {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  float: right;
+  display: none;
+
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 1px;
+    margin: 4px 0;
+  }
+
+  &:hover, &:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive menu - Bootstrap 3 style */
+@media (max-width: 767px) {
+  .navbar-toggle {
+    display: block;
+  }
+  
+  /* Hide collapsed menu by default on mobile */
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  
+  /* Show menu when 'in' class is present */
+  .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+  
+  .navbar-nav {
+    margin: 0;
+    
+    li {
+      float: none;
+      
+      a {
+        padding: 10px 15px;
+        display: block;
+        color: #9d9d9d;
+        
+        &:hover, &:focus {
+          color: #fff;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    
+    li a {
+      padding: 5px 15px 5px 35px;
+      color: #777;
+      
+      &:hover {
+        color: #fff;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/* Desktop: Always show navbar content */
+@media (min-width: 768px) {
+  .navbar-collapse.collapse {
+    display: block !important;
+    visibility: visible !important;
+  }
 }
