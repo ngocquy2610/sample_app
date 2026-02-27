@@ -24,6 +24,9 @@ gem "jbuilder"
 gem "tzinfo-data" # , platforms: %i[ mingw x64_mingw jruby ]
 
 gem "bcrypt"
+gem "faker"
+gem "kaminari"
+gem "bootstrap-will_paginate"
 gem "bootstrap-sass"
 gem "sassc-rails"
 gem "sprockets-rails"
