@@ -24,22 +24,32 @@ document.addEventListener("turbo:load", function () {
       let menu = document.querySelector("#dropdown-menu");
       if (menu) {
         // Close any other open dropdowns first
-        document.querySelectorAll(".dropdown-menu.open").forEach(function(openMenu) {
-          if (openMenu !== menu) {
-            openMenu.classList.remove("open");
-          }
-        });
+        document
+          .querySelectorAll(".dropdown-menu.open")
+          .forEach(function (openMenu) {
+            if (openMenu !== menu) {
+              openMenu.classList.remove("open");
+            }
+          });
         // Toggle current dropdown
         menu.classList.toggle("open");
       }
     });
-    
+
     // Close dropdown when clicking outside
-    document.addEventListener("click", function(event) {
-      let dropdown = document.querySelector("#dropdown-menu");
-      if (dropdown && !account.contains(event.target) && !dropdown.contains(event.target)) {
-        dropdown.classList.remove("open");
-      }
-    });
+    document.addEventListener(
+      "click",
+      function (event) {
+        let dropdown = document.querySelector("#dropdown-menu");
+        if (
+          dropdown &&
+          !account.contains(event.target) &&
+          !dropdown.contains(event.target)
+        ) {
+          dropdown.classList.remove("open");
+        }
+      },
+      { once: true },
+    );
   }
 });
