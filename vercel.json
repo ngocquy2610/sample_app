@@ -1,15 +1,14 @@
 {
-  "version": 2,
-  "public": true,
-  "functions": {
-    "config/routes.rb": {
-      "runtime": "vercel-ruby@3.2.2"
+  "builds": [
+    {
+      "src": "api/index.rb",
+      "use": "@vercel/ruby"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "config/routes.rb"
+      "dest": "/api/index.rb"
     }
   ]
 }
