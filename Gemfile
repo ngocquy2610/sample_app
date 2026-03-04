@@ -22,7 +22,7 @@ gem "jbuilder"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data" # , platforms: %i[ mingw x64_mingw jruby ]
-gem "image_processing", "1.12.2"
+gem "image_processing", "1.14.0"
 gem "active_storage_validations"
 gem "bcrypt"
 gem "faker"
