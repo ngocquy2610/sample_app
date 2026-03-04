@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+ruby "3.2.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -22,7 +22,6 @@ gem "jbuilder"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data" # , platforms: %i[ mingw x64_mingw jruby ]
-
 gem "image_processing", "1.12.2"
 gem "active_storage_validations"
 gem "bcrypt"
