@@ -35,7 +35,7 @@ gem "sprockets-rails"
 
 group :production do
   gem "pg", "1.3.5"
-  gem "aws-sdk-s3", "1.114.0", require: false
+  gem "aws-sdk-s3", "1.213.0", require: false
 end
 
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
