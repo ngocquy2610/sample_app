@@ -57,8 +57,26 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "example.com" }
-  config.action_mailer.delivery_method = :logger
+  # config/environments/production.rb
+  # config/environments/production.rb
+
+  # Change this line
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
+  # Add these settings
+  config.action_mailer.smtp_settings = {
+    address:              "email-smtp.ap-southeast-2.amazonaws.com",
+    port:                 587,
+    user_name:            ENV["SMTP_USERNAME"],
+    password:             ENV["SMTP_PASSWORD"],
+    authentication:       :login,
+    enable_starttls_auto: true
+  }
+
+  # Ensure your host is set correctly for the activation links
+  config.action_mailer.default_url_options = { host: "15.134.229.169", port: 3001 }
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via bin/rails credentials:edit.
   # config.action_mailer.smtp_settings = {
