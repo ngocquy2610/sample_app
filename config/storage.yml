@@ -29,7 +29,7 @@ amazon:
   service: S3
   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
   secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-  region: <%= ENV['AWS_REGION'] || ENV['AWS_DEFAULT_REGION'] || 'ap-southeast-2' %>
+  region: <%= ENV['AWS_REGION'] || ENV.fetch('AWS_DEFAULT_REGION') %>
   bucket: <%= ENV['AWS_BUCKET'] %>
-  endpoint: <%= ENV['AWS_S3_ENDPOINT'] %>
+  endpoint: <%= (ENV['AWS_S3_ENDPOINT'] && !ENV['AWS_S3_ENDPOINT'].empty?) ? ENV['AWS_S3_ENDPOINT'] : "https://s3.#{ENV['AWS_REGION'] || ENV.fetch('AWS_DEFAULT_REGION')}.amazonaws.com" %>
   force_path_style: <%= ENV['AWS_FORCE_PATH_STYLE'] == 'true' %>
