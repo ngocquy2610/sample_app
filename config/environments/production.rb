@@ -63,19 +63,18 @@ Rails.application.configure do
   # Change this line
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
 
-  # Add these settings
   config.action_mailer.smtp_settings = {
-    address:              "email-smtp.ap-southeast-2.amazonaws.com",
+    address:              "smtp.gmail.com",
     port:                 587,
-    user_name:            ENV["SMTP_USERNAME"],
-    password:             ENV["SMTP_PASSWORD"],
-    authentication:       :login,
+    domain:               "gmail.com",
+    user_name:            "nnquy2610@gmail.com",
+    password:             "uzsfhmflljbcjzcy", # Paste it here directly
+    authentication:       "plain",
     enable_starttls_auto: true
   }
 
-  # Ensure your host is set correctly for the activation links
+  # Ensure this matches your EC2 setup
   config.action_mailer.default_url_options = { host: "15.134.229.169", port: 3001 }
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via bin/rails credentials:edit.
