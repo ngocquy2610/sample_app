@@ -29,6 +29,7 @@ gem "faker"
 gem "kaminari"
 gem "bootstrap-will_paginate"
 gem "bootstrap-sass"
+gem "ruby-vips"
 gem "sassc-rails"
 gem "sprockets-rails"
 
